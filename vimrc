@@ -1,0 +1,17 @@
+set t_Co=256
+set ts=4
+set expandtab
+set sw=4
+set ai
+set magic
+set wrapmargin=0
+set showmode
+set nowrap
+set nocindent
+set clipboard=unnamed
+set hlsearch
+set tags=./tags;/
+set title
+set titleold=xterm
+set number
+set notagbsearch
