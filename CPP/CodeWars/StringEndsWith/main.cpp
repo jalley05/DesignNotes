@@ -14,19 +14,25 @@
 using namespace std;
 
 bool solution(string const &str, string const &ending) {
+    if(ending.size() == 0) {
+        return true;
+    }
+
+    // Find the index of the ending and if it is exactlt the last
+    // characters in the str
     size_t index = str.find(ending);
-    if(index != string::npos)
-    {
+    if(index != string::npos) {
         return (index == (str.size() - ending.size()));
     }
     return false;
 }
 
 int main() {
-
+    // Test cases
     assert(solution("abcde", "cde"));
     assert(!solution("abcde", "abc"));
-    assert(!solution("abc", ""));
+    assert(!solution("abc", "e"));
+    assert(solution("alsdkfj", ""));
 
     cout << "Pass" << endl;
 
