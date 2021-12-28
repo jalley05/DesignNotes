@@ -1,0 +1,59 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC=g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-I.$/;"	m
+Connection	neuron.h	/^    struct Connection$/;"	s	class:Neuron
+Layer	neuron.h	/^typedef std::vector<Neuron> Layer;$/;"	t
+Net	neuralNet.cpp	/^Net::Net(const vector<unsigned> &topology)$/;"	f	class:Net
+Net	neuralNet.h	/^class Net$/;"	c
+Neuron	neuron.cpp	/^Neuron::Neuron(unsigned numOutputs, unsigned myIndex) : $/;"	f	class:Neuron
+Neuron	neuron.h	/^class Neuron$/;"	c
+TrainingData	trainingData.cpp	/^TrainingData::TrainingData(const string filename)$/;"	f	class:TrainingData
+TrainingData	trainingData.h	/^class TrainingData$/;"	c
+alpha	neuron.cpp	/^double Neuron::alpha = 0.5; \/\/ momentum, multiplier of last deltaWeight, [0.0..n]$/;"	m	class:Neuron	file:
+alpha	neuron.h	/^	static double alpha; \/\/ [0.0...n] multiplier of last weight change [momentum]$/;"	m	class:Neuron
+backProp	neuralNet.cpp	/^void Net::backProp(const std::vector<double> &targetVals)$/;"	f	class:Net
+calcHiddenGradients	neuron.cpp	/^void Neuron::calcHiddenGradients(const Layer &nextLayer)$/;"	f	class:Neuron
+calcOutputGradients	neuron.cpp	/^void Neuron::calcOutputGradients(double targetVals)$/;"	f	class:Neuron
+deltaWeight	neuron.h	/^        double deltaWeight;$/;"	m	struct:Neuron::Connection
+eta	neuron.cpp	/^double Neuron::eta = 0.15; \/\/ overall net learning rate$/;"	m	class:Neuron	file:
+eta	neuron.h	/^	static double eta; \/\/ [0.0...1.0] overall net training rate$/;"	m	class:Neuron
+feedForward	neuralNet.cpp	/^void Net::feedForward(const vector<double> &inputVals)$/;"	f	class:Net
+feedForward	neuron.cpp	/^void Neuron::feedForward(const Layer &prevLayer)$/;"	f	class:Neuron
+getNextInputs	trainingData.cpp	/^unsigned TrainingData::getNextInputs(vector<double> &inputVals)$/;"	f	class:TrainingData
+getOutputVal	neuron.h	/^	double getOutputVal(void) const { return m_outputVal; }$/;"	f	class:Neuron
+getRecentAverageError	neuralNet.h	/^	double getRecentAverageError(void) const { return m_recentAverageError; }$/;"	f	class:Net
+getResults	neuralNet.cpp	/^void Net::getResults(vector<double> &resultVals) const$/;"	f	class:Net
+getTargetOutputs	trainingData.cpp	/^unsigned TrainingData::getTargetOutputs(vector<double> &targetOutputVals)$/;"	f	class:TrainingData
+getTopology	trainingData.cpp	/^void TrainingData::getTopology(vector<unsigned> &topology)$/;"	f	class:TrainingData
+isEof	trainingData.h	/^	bool isEof(void) const$/;"	f	class:TrainingData
+m_gradient	neuron.h	/^	double m_gradient;$/;"	m	class:Neuron
+m_layers	neuralNet.h	/^	std::vector<Layer> m_layers; \/\/m_layers[layerNum][neuronNum]$/;"	m	class:Net
+m_myIndex	neuron.h	/^	unsigned m_myIndex;$/;"	m	class:Neuron
+m_outputVal	neuron.h	/^	double m_outputVal;$/;"	m	class:Neuron
+m_outputWeights	neuron.h	/^	std::vector<Connection> m_outputWeights;$/;"	m	class:Neuron
+m_recentAverageError	neuralNet.h	/^	double m_recentAverageError;$/;"	m	class:Net
+m_recentAverageSmoothingFactor	neuralNet.cpp	/^double Net::m_recentAverageSmoothingFactor = 100.0; \/\/ Number of training samples to average over$/;"	m	class:Net	file:
+m_recentAverageSmoothingFactor	neuralNet.h	/^	static double m_recentAverageSmoothingFactor;$/;"	m	class:Net
+m_trainingDataFile	trainingData.h	/^	std::ifstream m_trainingDataFile;$/;"	m	class:TrainingData
+main	neuralNet.cpp	/^int main()$/;"	f
+main	trainingSamples/makeLogicSamples.cpp	/^int main()$/;"	f
+main	trainingSamples/makeTicTacToeSamples.cpp	/^int main()$/;"	f
+main	trainingSamples/makeTrainingSamples.cpp	/^int main()$/;"	f
+obj	Makefile	/^obj = $(src:.cpp=.o)$/;"	m
+randomWeight	neuron.h	/^	static double randomWeight(void) { return rand() \/ double(RAND_MAX); }$/;"	f	class:Neuron
+setOutputVal	neuron.h	/^	void setOutputVal(double val) { m_outputVal = val; }$/;"	f	class:Neuron
+showVectorVals	neuralNet.cpp	/^void showVectorVals(string label, vector<double> &v)$/;"	f
+src	Makefile	/^src = $(wildcard *.cpp)$/;"	m
+sumDOW	neuron.cpp	/^double Neuron::sumDOW(const Layer &nextLayer) const$/;"	f	class:Neuron
+transferFunction	neuron.cpp	/^double Neuron::transferFunction(double x)$/;"	f	class:Neuron
+transferFunctionDerivative	neuron.cpp	/^double Neuron::transferFunctionDerivative(double x)$/;"	f	class:Neuron
+updateInputWeights	neuron.cpp	/^void Neuron::updateInputWeights(Layer &prevLayer)$/;"	f	class:Neuron
+weight	neuron.h	/^        double weight;$/;"	m	struct:Neuron::Connection
+writeIn	trainingSamples/makeLogicSamples.cpp	/^void writeIn(vector<int>& vec)$/;"	f
+writeIn	trainingSamples/makeTicTacToeSamples.cpp	/^void writeIn(vector<int>& vec)$/;"	f
+writeOut	trainingSamples/makeTicTacToeSamples.cpp	/^void writeOut(vector<int>& vec)$/;"	f
