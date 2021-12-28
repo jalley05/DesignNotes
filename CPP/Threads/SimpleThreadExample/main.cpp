@@ -2,6 +2,7 @@
 
 #include <thread>
 #include <chrono>
+#include <iostream>
 
 using namespace std;
 
@@ -21,7 +22,17 @@ private:
 void ThreadClass::Create() {
     if(!m_thread)
     {
+        unsigned num_cpus = thread::hardware_concurrency();
         m_thread = new thread(&ThreadClass::Process, this);
+
+        cpu_set_t cpuset;
+        CPU_ZERO(&cpuset);
+        CPU_SET(0, &cpuset);
+
+        int rc = pthread_setaffinity_np(m_thread->native_handle(), sizeof(cpu_set_t), &cpuset);
+
+        if(rc != 0)
+            cout << "Error calling pthread_setaffinity_np: " << rc << "\n";
     }
 }
 
@@ -33,9 +44,9 @@ void ThreadClass::Process() {
     }
 }
 
-
 int main()
 {
+
     ThreadClass tc = ThreadClass();
     tc.Create();
 
