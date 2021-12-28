@@ -5,6 +5,7 @@ obj = $(src:.cpp=.o)
 
 neuralNet: $(obj)
 	$(CC) -o $@ $^ $(CFLAGS)
+	rm -f $(obj)
 
 .PHONY: clean
 clean:
